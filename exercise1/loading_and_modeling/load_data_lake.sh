@@ -1,6 +1,12 @@
 #! /bin/bash
 set -x # echo on
 
+if [[ "$1" != "--skip-acquire" ]]; then
+  source "acquire.sh"
+else
+  "Skipping the acquire step since --skip-acquire is set"
+fi
+
 HOSPITAL_DATA="../hospitals"
 
 HDFS_HOSPITALS_COMPARE=/user/w205/hospitals_compare
@@ -20,6 +26,8 @@ function put {
 put hospitals hospitals.csv
 
 put effective_care effective_care.csv
+
+put readmissions readmissions.csv
 
 put measure_dates measure_dates.csv
 
