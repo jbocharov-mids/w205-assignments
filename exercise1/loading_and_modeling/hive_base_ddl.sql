@@ -4,8 +4,10 @@
 -- From inspection, all the rows are quoted, leading to initial 
 -- representation as strings (can interpret after the fact in queries)
 
-DROP TABLE IF EXISTS hospitals;
-CREATE EXTERNAL TABLE hospitals (
+CREATE DATABASE IF NOT EXISTS elt;
+
+DROP TABLE IF EXISTS elt.hospitals;
+CREATE EXTERNAL TABLE elt.hospitals (
   Provider_ID VARCHAR(255),
   Hospital_Name VARCHAR(255),
   Address VARCHAR(255),
@@ -18,13 +20,17 @@ CREATE EXTERNAL TABLE hospitals (
   Hospital_Ownership VARCHAR(255),
   Emergency_Services VARCHAR(255)
 )
-ROW FORMAT DELIMITED
-FIELDS TERMINATED BY ','
+ROW FORMAT SERDE 'org.apache.hadoop.hive.serde2.OpenCSVSerde'
+WITH SERDEPROPERTIES (
+  'separatorChar' = ',',
+  'quoteChar' = '"',
+  'escapeChar' = '\\'
+)
 STORED AS TEXTFILE
 LOCATION '/user/w205/hospitals_compare/hospitals';
 
-DROP TABLE IF EXISTS effective_care;
-CREATE EXTERNAL TABLE effective_care (
+DROP TABLE IF EXISTS elt.effective_care;
+CREATE EXTERNAL TABLE elt.effective_care (
   Provider_ID VARCHAR(255),
   Hospital_Name VARCHAR(255),
   Address VARCHAR(255),
@@ -42,13 +48,17 @@ CREATE EXTERNAL TABLE effective_care (
   Measure_Start_Date VARCHAR(255),
   Measure_End_Date VARCHAR(255)
 )
-ROW FORMAT DELIMITED
-FIELDS TERMINATED BY ','
+ROW FORMAT SERDE 'org.apache.hadoop.hive.serde2.OpenCSVSerde'
+WITH SERDEPROPERTIES (
+  'separatorChar' = ',',
+  'quoteChar' = '"',
+  'escapeChar' = '\\'
+)
 STORED AS TEXTFILE
 LOCATION '/user/w205/hospitals_compare/effective_care';
 
-DROP TABLE IF EXISTS readmissions;
-CREATE EXTERNAL TABLE readmissions (
+DROP TABLE IF EXISTS elt.readmissions;
+CREATE EXTERNAL TABLE elt.readmissions (
   Provider_ID VARCHAR(255),
   Hospital_Name VARCHAR(255),
   Address VARCHAR(255),
@@ -68,13 +78,17 @@ CREATE EXTERNAL TABLE readmissions (
   Measure_Start_Date VARCHAR(255),
   Measure_End_Date VARCHAR(255)
 )
-ROW FORMAT DELIMITED
-FIELDS TERMINATED BY ','
+ROW FORMAT SERDE 'org.apache.hadoop.hive.serde2.OpenCSVSerde'
+WITH SERDEPROPERTIES (
+  'separatorChar' = ',',
+  'quoteChar' = '"',
+  'escapeChar' = '\\'
+)
 STORED AS TEXTFILE
 LOCATION '/user/w205/hospitals_compare/readmissions';
 
-DROP TABLE IF EXISTS measure_dates;
-CREATE EXTERNAL TABLE measure_dates (
+DROP TABLE IF EXISTS elt.measure_dates;
+CREATE EXTERNAL TABLE elt.measure_dates (
   Measure_Name VARCHAR(255),
   Measure_ID VARCHAR(255),
   Measure_Start_Quarter VARCHAR(255),
@@ -82,13 +96,17 @@ CREATE EXTERNAL TABLE measure_dates (
   Measure_End_Quarter VARCHAR(255),
   Measure_End_Date VARCHAR(255)
 )
-ROW FORMAT DELIMITED
-FIELDS TERMINATED BY ','
+ROW FORMAT SERDE 'org.apache.hadoop.hive.serde2.OpenCSVSerde'
+WITH SERDEPROPERTIES (
+  'separatorChar' = ',',
+  'quoteChar' = '"',
+  'escapeChar' = '\\'
+)
 STORED AS TEXTFILE
 LOCATION '/user/w205/hospitals_compare/measure_dates';
 
-DROP TABLE IF EXISTS surveys_responses;
-CREATE EXTERNAL TABLE surveys_responses (
+DROP TABLE IF EXISTS elt.surveys_responses;
+CREATE EXTERNAL TABLE elt.surveys_responses (
   Provider_Number VARCHAR(255),
   Hospital_Name VARCHAR(255),
   Address VARCHAR(255),
@@ -123,8 +141,12 @@ CREATE EXTERNAL TABLE surveys_responses (
   HCAHPS_Base_Score VARCHAR(255),
   HCAHPS_Consistency_Score VARCHAR(255)
 )
-ROW FORMAT DELIMITED
-FIELDS TERMINATED BY ','
+ROW FORMAT SERDE 'org.apache.hadoop.hive.serde2.OpenCSVSerde'
+WITH SERDEPROPERTIES (
+  'separatorChar' = ',',
+  'quoteChar' = '"',
+  'escapeChar' = '\\'
+)
 STORED AS TEXTFILE
 LOCATION '/user/w205/hospitals_compare/surveys_responses';
 
