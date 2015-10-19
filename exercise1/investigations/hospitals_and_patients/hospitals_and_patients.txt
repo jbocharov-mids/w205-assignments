@@ -1,0 +1,7 @@
+The final analysis returns a correlation of only 0.069, which is a pretty
+weak correlation between ratings and patient surveys. For the methodology,
+we used the Z-scores, but this time aggegating for by hospital rather than
+procedure.
+
+hospital_survey_correlation
+0.06933081812833049

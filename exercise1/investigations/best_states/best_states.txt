@@ -1,4 +1,4 @@
-The following 10 state provide the best quality of data from the
+The following 10 states provide the best quality of data from the
 analysis of the provided data set. The methodology, same as for best hospitals,
 but now aggregated at the state level, is robust to the variety of scoring 
 ranges for various procedure types while taking them all into account.

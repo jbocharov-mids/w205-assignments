@@ -1,0 +1,15 @@
+The variability has already been pre-computed as part of Measure_Norms. To get
+the highest-variability procedures, we sort in descending order by
+standard deviation.
+
+measure_id  score_stddev       measure_name
+ED_1b       92.83178787038688  ED1
+ED_2b       62.1666505939829   ED2
+OP_18b      40.70077322337158  OP 18
+OP_3b       29.479326601050527 Median Time to Transfer to Another Facility for Acute Coronary Intervention
+STK_4       21.954194561164023 Thrombolytic Therapy
+OP_23       21.844653491103774 Head CT results
+AMI_7a      18.7794213613377   Fibrinolytic Therapy Received Within 30 Minutes Of Hospital Arrival
+OP_2        18.048443797995763 Fibrinolytic Therapy Received Within 30 Minutes of ED Arrival
+OP_21       17.722358013930915 Median time to pain med
+OP_20       16.882052975576602 Door to diagnostic eval
