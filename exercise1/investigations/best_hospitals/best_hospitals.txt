@@ -1,0 +1,16 @@
+The following 10 hospitals provide the best quality of data from the
+analysis of the provided data set. The methodology is robust to the variety
+of scoring ranges for various procedure types while taking them all into
+account. 
+
+provider_id hospital_name                               mean_zscore         distinct_procedures
+450348      FALLS COMMUNITY HOSPITAL AND CLINIC         1.4900758813137764  9
+320060      ZUNI COMPREHENSIVE COMMUNITY HEALTH CENTER  1.467154927472654   4
+011302      RED BAY HOSPITAL                            1.3653428512236112  2
+370225      SUMMIT MEDICAL CENTER                       1.1972459454361342  9
+140300      PROVIDENT HOSPITAL OF CHICAGO               1.1529269706249956  20
+451379      CORYELL MEMORIAL HEALTHCARE SYSTEM          1.039985347960374   8
+400079      HOSP COMUNITARIO BUEN SAMARITANO            1.0302824793412853  16
+501329      PEACEHEALTH UNITED GENERAL MEDICAL CENTER   0.9666161432213066  7
+450289      HARRIS HEALTH SYSTEM                        0.8503080331643065  35
+111308      CLINCH MEMORIAL HOSPITAL                    0.8460651070594168  2
