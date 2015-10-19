@@ -1,0 +1,20 @@
+The following 10 state provide the best quality of data from the
+analysis of the provided data set. The methodology, same as for best hospitals,
+but now aggregated at the state level, is robust to the variety of scoring 
+ranges for various procedure types while taking them all into account.
+
+It is very interesting to note how much smaller the differences are at the state
+level, with the top state only showing 1/4 of a standard deviation above the
+mean.
+
+state mean_zscore         distinct_procedures distinct_hospitals
+DE    0.2531657358289971  39                  7
+MD    0.23133126302533225 41                  46
+NJ    0.19397623366713354 44                  65
+NH    0.17870978387558936 41                  26
+ME    0.17425174971730598 41                  34
+MA    0.17269718948872587 44                  61
+NC    0.1622551409106842  44                  108
+FL    0.15658282416432767 42                  180
+VA    0.1562509462912159  44                  83
+NV    0.1504083163552575  42                  28
