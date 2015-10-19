@@ -19,7 +19,8 @@ SELECT
   measure_id, 
   measure_name,
   measure_end_date,
-  CAST(score AS INT)
+  CAST(score AS INT),
+  state
 FROM elt.effective_care 
 WHERE 
   measure_end_date = '09/30/2014'
